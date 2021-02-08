@@ -30,8 +30,6 @@ export default function Layout({ children, home }) {
   return (
     <section>
       <Head>
-        <link rel="manifest" href="/manifest.json" />
-        <meta name="theme-color" content="#317EFB" />
         <link rel="icon" href="/favicon.ico" />
         <link rel="preconnect" href="https://fonts.gstatic.com" />
         <link
