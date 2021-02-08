@@ -1,22 +1,25 @@
-import React from "react"
-import { Link } from "gatsby"
+import React from 'react'
 
-import Layout from "../components/layout"
-import Image from "../components/image"
-import SEO from "../components/seo"
-
-const IndexPage = () => (
-  <Layout>
-    <SEO title="Home" />
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-      <Image />
-    </div>
-    <Link to="/page-2/">Go to page 2</Link> <br />
-    <Link to="/using-typescript/">Go to "Using TypeScript"</Link>
-  </Layout>
-)
-
-export default IndexPage
+import {Helmet as Head} from "react-helmet";
+import Layout, { siteTitle } from "../components/layout";
+import { Button } from "@material-ui/core";
+import {Link} from "gatsby";
+import getStartedImg from "../images/play_time.svg"
+export default function Home() {
+  return (
+    <Layout home>
+      <Head>
+        <title>{siteTitle}</title>
+      </Head>
+      <section className="flex flex-col justify-center items-center h-screen p-2 w-full bg-yellow-100">
+        <img className="rounded w-24 h-34" src={getStartedImg} />
+        <p className="text-3xl mb-2">2 Maids and A Mom</p>
+        <Link to="/service">
+          <Button variant="contained" color="primary">
+            Get Started
+          </Button>
+        </Link>
+      </section>
+    </Layout>
+  );
+}
